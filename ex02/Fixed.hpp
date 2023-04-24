@@ -6,7 +6,7 @@
 /*   By: fgeslin <fgeslin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 14:22:03 by fgeslin           #+#    #+#             */
-/*   Updated: 2023/04/22 16:38:23 by fgeslin          ###   ########.fr       */
+/*   Updated: 2023/04/24 13:24:33 by fgeslin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,23 @@ public:
 	Fixed( Fixed const & src );						// Canonical		Contructor Copy
 	~Fixed( void );									// Canonical		Destructor
 
-	Fixed &		operator=( Fixed const & rhs );		// Canonical		Surcharche operator =
-	Fixed &		operator+( Fixed const & rhs );
-	Fixed &		operator-( Fixed const & rhs );
-	Fixed &		operator*( Fixed const & rhs );
-	Fixed &		operator/( Fixed const & rhs );
+	Fixed &		operator=( Fixed const & rhs );		// Canonical		Surcharge operator =
+	Fixed		operator+( Fixed const & rhs ) const;
+	Fixed		operator-( Fixed const & rhs ) const;
+	Fixed		operator*( Fixed const & rhs ) const;
+	Fixed		operator/( Fixed const & rhs ) const;
 
-	Fixed &		operator>( Fixed const & rhs );
-	Fixed &		operator<( Fixed const & rhs );
-	Fixed &		operator>=( Fixed const & rhs );
-	Fixed &		operator<=( Fixed const & rhs );
-	Fixed &		operator==( Fixed const & rhs );
-	Fixed &		operator!=( Fixed const & rhs );
+	Fixed		operator++( int n );	// post
+	Fixed		operator--( int n );	// post
+	Fixed		operator++();			// pre
+	Fixed		operator--();			// pre
 
-	Fixed &		operator++( int n );	// post
-	Fixed &		operator--( int n );	// post
-	Fixed &		operator++();	// pre
-	Fixed &		operator--();	// pre
+	bool		operator>( Fixed const & rhs ) const;
+	bool		operator<( Fixed const & rhs ) const;
+	bool		operator>=( Fixed const & rhs ) const;
+	bool		operator<=( Fixed const & rhs ) const;
+	bool		operator==( Fixed const & rhs ) const;
+	bool		operator!=( Fixed const & rhs ) const;
 
 	int			getRawBits( void ) const;
 	void		setRawBits( int const raw );
@@ -49,10 +49,10 @@ public:
 	int			toInt( void ) const;
 	float		toFloat( void ) const;
 
-	static Fixed&	min( Fixed a, Fixed b );
-	static Fixed&	min( Fixed const a, Fixed const b );
-	static Fixed&	max( Fixed a, Fixed b );
-	static Fixed&	max( Fixed const a, Fixed const b );
+	static Fixed &	min( Fixed & a, Fixed & b );
+	static Fixed const &	min( Fixed const & a, Fixed const & b );
+	static Fixed &	max( Fixed & a, Fixed & b );
+	static Fixed const &	max( Fixed const & a, Fixed const & b );
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: fgeslin <fgeslin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 14:20:39 by fgeslin           #+#    #+#             */
-/*   Updated: 2023/04/22 16:26:47 by fgeslin          ###   ########.fr       */
+/*   Updated: 2023/04/24 13:28:14 by fgeslin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,3 @@ int main( void ) {
 	std::cout << Fixed::max( a, b ) << std::endl;
 	return 0;
 }
-
